@@ -1,1 +1,1 @@
-# Generador-de-Modulos-Pascal
+# Generador de procedimientos Pascal
