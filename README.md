@@ -2,6 +2,10 @@
 
 [Descargar archivo ejecutable (.exe)](https://github.com/GregoMac1/Generador-de-procedimientos-Pascal/releases/download/v1.0/Generador.de.procedimientos.Pascal.v1.0.zip)
 
+## Instalación e instrucciones
+1. Instalar PySimpleGui mediante el comando: ```pip install -r requirements.txt```
+2. Ejecutar ```run.py```
+
 ## Imágenes de muestra
 
 ![imagen1](https://raw.githubusercontent.com/GregoMac1/Generador-de-procedimientos-Pascal/master/imagenes/1.jpg)
