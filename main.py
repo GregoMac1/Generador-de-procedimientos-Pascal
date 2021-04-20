@@ -13,7 +13,7 @@ layout = [[sg.Text(texto_bienvenida,size=(60,3),justification='center',font=('Ar
         [sg.Text('Campos del registro (Sólo llenar si el procedimiento lo solicita. Valores separados por coma. Por ejemplo, "apellido,nombre,pais de origen,..."): ',font=('Arial',11),size=(70,2),justification='center'), sg.Input(key='campos_registro',font=('Arial',11))],
         [sg.Button('Generar',font=('Arial',11)), sg.Exit('Salir',font=('Arial',11))]]
 
-window = sg.Window('Generador de procedimientos de Pascal',layout,resizable=True,element_justification='center',font=('Arial',11))
+window = sg.Window('Generador de procedimientos de Pascal',layout,resizable=True,element_justification='center',font=('Arial',11),return_keyboard_events=True)
 
 while True:
     event, values = window.read()
@@ -29,7 +29,7 @@ while True:
         window['campos_requeridos'].update(campos_requeridos[window['opciones'].get_indexes()[0]])
     except IndexError:
         pass
-    if event == 'Generar':        
+    if event == 'Generar' or event == 'Enter':        
         campos_ingresados = values['campos_ingresados'].split(',')
         for i in range(len(campos_ingresados)):
             campos_ingresados[i] = campos_ingresados[i].strip(' ')
@@ -50,6 +50,31 @@ while True:
             elif window['opciones'].get_indexes()[0] == 2:
                 try:
                     sg.popup_scrolled(leer_fin_de_archivo(campos_ingresados[0],campos_ingresados[1],campos_ingresados[2],campos_ingresados[3]),title='Resultado',font=('Monaco',12))
+                except IndexError:
+                    sg.popup('Error en el ingreso de los campos.',title='Error')
+            elif window['opciones'].get_indexes()[0] == 3:
+                try:
+                    sg.popup_scrolled(minimo(campos_ingresados[0],campos_ingresados[1],campos_ingresados[2],campos_ingresados[3]),title='Resultado',font=('Monaco',12))
+                except IndexError:
+                    sg.popup('Error en el ingreso de los campos.',title='Error')
+            elif window['opciones'].get_indexes()[0] == 4:
+                try:
+                    sg.popup_scrolled(desplegar_menu(campos_ingresados[0]),title='Resultado',font=('Monaco',12))
+                except IndexError:
+                    sg.popup('Error en el ingreso de los campos.',title='Error')
+            elif window['opciones'].get_indexes()[0] == 5:
+                try:
+                    sg.popup_scrolled(agregar_en_archivo_lista_invertida(campos_ingresados[0],campos_ingresados[1],campos_ingresados[2]),title='Resultado',font=('Monaco',12))
+                except IndexError:
+                    sg.popup('Error en el ingreso de los campos.',title='Error')
+            elif window['opciones'].get_indexes()[0] == 6:
+                try:
+                    sg.popup_scrolled(baja_fisica_lista_invertida(campos_ingresados[0],campos_ingresados[1],campos_ingresados[2]),title='Resultado',font=('Monaco',12))
+                except IndexError:
+                    sg.popup('Error en el ingreso de los campos.',title='Error')
+            elif window['opciones'].get_indexes()[0] == 7:
+                try:
+                    sg.popup_scrolled(valor_entero(),title='Resultado',font=('Monaco',12))
                 except IndexError:
                     sg.popup('Error en el ingreso de los campos.',title='Error')
         except IndexError:
