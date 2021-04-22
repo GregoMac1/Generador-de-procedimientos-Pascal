@@ -8,6 +8,7 @@
 
 ## Imágenes de muestra
 
-![imagen1](https://raw.githubusercontent.com/GregoMac1/Generador-de-procedimientos-Pascal/master/imagenes/1.jpg)
-![imagen2](https://raw.githubusercontent.com/GregoMac1/Generador-de-procedimientos-Pascal/master/imagenes/2.jpg)
-![imagen3](https://raw.githubusercontent.com/GregoMac1/Generador-de-procedimientos-Pascal/master/imagenes/3.jpg)
+![imagen1](https://raw.githubusercontent.com/GregoMac1/Generador-de-procedimientos-Pascal/master/imagenes/v2.0/1.jpg)
+![imagen2](https://raw.githubusercontent.com/GregoMac1/Generador-de-procedimientos-Pascal/master/imagenes/v2.0/2.jpg)
+![imagen3](https://raw.githubusercontent.com/GregoMac1/Generador-de-procedimientos-Pascal/master/imagenes/v2.0/3.jpg)
+![imagen4](https://raw.githubusercontent.com/GregoMac1/Generador-de-procedimientos-Pascal/master/imagenes/v2.0/4.jpg)
