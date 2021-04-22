@@ -1,3 +1,3 @@
-from src import main
+from src.components import main
 
 main.start()
