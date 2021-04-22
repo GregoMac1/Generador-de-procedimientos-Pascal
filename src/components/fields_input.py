@@ -26,6 +26,6 @@ def start(campos_requeridos,seleccionado):
                     procedimiento_resultado = lista_de_procedimientos[seleccionado]['funcion'](campos_ingresados)
                     sg.popup_scrolled(procedimiento_resultado,title='Resultado',font=('Monaco',16))
             except IndexError:
-                    sg.popup('Error en el ingreso de los campos.',title='Error')
+                    sg.popup('Error en el ingreso de los campos.',title='Error',font=('Bahnschrift SemiLight',15))
 
     window.close()

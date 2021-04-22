@@ -117,7 +117,7 @@ def baja_logica_lista_invertida(campos):
     {campos[0]}:{campos[1]}; codigo,pos,posInicio:integer;
   begin
     reset(archivo);
-    write('Ingrese el codigo de la novela a eliminar: ');readln(codigo);
+    write('Ingrese el codigo del {campos[0]} a eliminar: ');readln(codigo);
     read(archivo,{campos[0]});
     posInicio:={campos[0]}.codigo;
     while ({campos[0]}.codigo<>codigo) do

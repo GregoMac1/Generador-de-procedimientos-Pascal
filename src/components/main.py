@@ -27,7 +27,7 @@ def start():
                     fields_input.start(lista_de_procedimientos[seleccionado]['campos_requeridos'],seleccionado)
                     window.un_hide()
             except (IndexError,UnboundLocalError):
-                sg.popup('Error. No hay ningún procedimiento seleccionado.',title='Error')
+                sg.popup('Error. No hay ningún procedimiento seleccionado.',title='Error',font=('Bahnschrift SemiLight',15))
 
     window.close()
 
