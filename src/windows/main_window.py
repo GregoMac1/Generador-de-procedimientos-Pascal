@@ -3,6 +3,8 @@ from src.data.lista_de_datos import lista_de_procedimientos
 
 sg.theme('DarkBlue13')
 
+version = 2.0
+
 texto_bienvenida = '''Este programa genera los procedimientos más usuales de la materia FOD, permitiendo al usuario obtener un resultado personalizado según los nombres de variables y tipos que use.
 
 Al seleccionar una opción de la lista de opciones, verá los campos que necesita ingresar para obtener el módulo seleccionado.'''
@@ -28,6 +30,6 @@ def build():
         [sg.Button('Seleccionar',key='-SELECT-'), sg.Exit('Salir',key='-EXIT-')]
     ]
 
-    window = sg.Window('Generador de procedimientos de Pascal',layout,resizable=True,element_justification='center',font=('Bahnschrift SemiLight',15))
+    window = sg.Window(f'Generador de procedimientos de Pascal v{version}',layout,resizable=True,element_justification='center',font=('Bahnschrift SemiLight',15))
 
     return window
