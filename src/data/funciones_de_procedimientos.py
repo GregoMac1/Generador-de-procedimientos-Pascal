@@ -172,29 +172,3 @@ def compactar_archivo_desordenado(campos):
     close(archivo);
   end;'''
     return modulo
-procedure compactar (var archivo:bin);
-  var
-    especie:reg; cantPosiciones:integer;
-  begin
-    reset(archivo);
-    cantPosiciones:=1;
-    leer(archivo,especie);
-    while (especie.codigo<>valoralto) do begin
-      if (especie.codigo<0) then begin
-        posActual:=filepos(archivo)-1;
-        seek(archivo,filesize(archivo)-cantPosiciones);
-        read(archivo,especie);
-        while (especie.codigo < 0) do begin
-          seek(archivo,filepos(archivo)-2);
-          read(archivo,especie);
-        end;
-        seek(archivo,posActual);
-        write(archivo,especie);
-        cantPosiciones:=cantPosiciones+1;
-      end;
-      leer(archivo,especie);
-    end;
-    seek(archivo,filepos(archivo)-cantPosiciones);
-    truncate(archivo);
-    close(archivo);
-  end;
